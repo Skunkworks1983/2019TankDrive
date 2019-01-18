@@ -5,27 +5,28 @@ import edu.wpi.first.wpilibj.Joystick;
 import java.util.HashMap;
 
 public class OI {
-    private Joystick left, right, panel;
-    private HashMap<JoyList, Joystick> JoyMap;
+    private HashMap<JoyList, Joystick> joyMap;
 
     public static int Y_AXIS = 0;
     public static int X_AXIS = 1;
 
     public OI()
     {
-        left = new Joystick(JoyList.LEFT.PORT);
-        right = new Joystick(JoyList.RIGHT.PORT);
-        panel = new Joystick(JoyList.PANEL.PORT);
+        joyMap = new HashMap<>();
+        joyMap.put(JoyList.LEFT, new Joystick(JoyList.LEFT.PORT));
+        joyMap.put(JoyList.RIGHT, new Joystick(JoyList.RIGHT.PORT));
+        joyMap.put(JoyList.PANEL, new Joystick(JoyList.PANEL.PORT));
+
     }
 
     public double getX(JoyList joystick)
     {
-        return JoyMap.get(joystick).getX();
+        return joyMap.get(joystick).getX();
     }
 
     public double getY(JoyList joystick)
     {
-        return JoyMap.get(joystick).getY();
+        return joyMap.get(joystick).getY();
     }
 
     public enum JoyList

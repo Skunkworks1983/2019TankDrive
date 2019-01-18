@@ -19,9 +19,9 @@ public class Robot extends TimedRobot {
   public void robotInit() {
       oi = new OI();
       drivebase = new Drivebase();
-      cameraServer = CameraServer.getInstance();
-      camera0 = cameraServer.startAutomaticCapture();
-      camera1 = cameraServer.startAutomaticCapture();
+      //cameraServer = CameraServer.getInstance();
+      //camera0 = cameraServer.startAutomaticCapture();
+      //camera1 = cameraServer.startAutomaticCapture();
 
       SmartDashboard.putBoolean("Camera 0", true);
       SmartDashboard.putBoolean("Camera 1", true);
