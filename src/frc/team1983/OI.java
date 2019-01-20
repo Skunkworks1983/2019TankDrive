@@ -6,8 +6,10 @@ import java.util.HashMap;
 
 import static java.lang.Math.abs;
 
-public class OI {
+public class OI
+{
     private HashMap<JoyList, Joystick> joyMap;
+
 
     public static int Y_AXIS = 0;
     public static int X_AXIS = 1;
@@ -28,15 +30,14 @@ public class OI {
 
     public double getY(JoyList joystick)
     {
-        return abs(joyMap.get(joystick).getY()) > .1? joyMap.get(joystick).getY() : 0;
+        return abs(joyMap.get(joystick).getY()) > .2? joyMap.get(joystick).getY() : 0;
     }
 
     public enum JoyList
     {
         LEFT(0),
         RIGHT(1),
-        PANEL(2)
-        ;
+        PANEL(2);
 
         public int PORT;
         JoyList(int port)

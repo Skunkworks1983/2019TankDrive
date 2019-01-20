@@ -8,7 +8,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team1983.commands.TankDrive;
 import frc.team1983.subsystems.Drivebase;
 
-public class Robot extends TimedRobot {
+public class Robot extends TimedRobot
+{
     private OI oi;
     private Drivebase drivebase;
     private CameraServer cameraServer;
@@ -16,7 +17,8 @@ public class Robot extends TimedRobot {
     private UsbCamera camera1;
 
   @Override
-  public void robotInit() {
+  public void robotInit()
+  {
       oi = new OI();
       drivebase = new Drivebase();
       //cameraServer = CameraServer.getInstance();
@@ -28,7 +30,8 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void robotPeriodic() {
+  public void robotPeriodic()
+  {
       Scheduler.getInstance().run();
 
 //      if(camera0.isEnabled() && !SmartDashboard.getBoolean("Camera 0", true))
@@ -44,24 +47,29 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void autonomousInit() {
+  public void autonomousInit()
+  {
       cameraServer.removeCamera(camera0.getName());
   }
 
   @Override
-  public void autonomousPeriodic() {
+  public void autonomousPeriodic()
+  {
   }
 
   @Override
-  public void teleopInit() {
+  public void teleopInit()
+  {
       Scheduler.getInstance().add(new TankDrive(drivebase, oi));
   }
 
   @Override
-  public void teleopPeriodic() {
+  public void teleopPeriodic()
+  {
   }
 
   @Override
-  public void testPeriodic() {
+  public void testPeriodic()
+  {
   }
 }

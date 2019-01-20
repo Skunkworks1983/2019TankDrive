@@ -6,11 +6,13 @@ import frc.team1983.subsystems.Drivebase;
 
 import static java.lang.Math.abs;
 
-public class TankDrive extends Command {
+public class TankDrive extends Command
+{
     private Drivebase drivebase;
     private OI oi;
 
-    public TankDrive(Drivebase drivebase, OI oi) {
+    public TankDrive(Drivebase drivebase, OI oi)
+    {
         this.drivebase = drivebase;
         this.oi = oi;
 
@@ -25,12 +27,13 @@ public class TankDrive extends Command {
     @Override
     public void execute()
     {
-        //drivebase.setLeft(-oi.getY(OI.JoyList.LEFT) * abs(oi.getY(OI.JoyList.LEFT)));
-        drivebase.setRight(oi.getY(OI.JoyList.RIGHT) * abs(oi.getY(OI.JoyList.RIGHT)));
+        drivebase.setLeft(oi.getY(OI.JoyList.LEFT) * abs(oi.getY(OI.JoyList.LEFT)));
+        drivebase.setRight(-oi.getY(OI.JoyList.RIGHT) * abs(oi.getY(OI.JoyList.RIGHT)));
     }
 
     @Override
-    protected boolean isFinished() {
+    protected boolean isFinished()
+    {
         return false;
     }
 }
