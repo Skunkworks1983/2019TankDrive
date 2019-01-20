@@ -25,7 +25,7 @@ public class TankDrive extends Command {
     @Override
     public void execute()
     {
-        drivebase.setLeft(oi.getY(OI.JoyList.LEFT) * abs(oi.getY(OI.JoyList.LEFT)));
+        //drivebase.setLeft(-oi.getY(OI.JoyList.LEFT) * abs(oi.getY(OI.JoyList.LEFT)));
         drivebase.setRight(oi.getY(OI.JoyList.RIGHT) * abs(oi.getY(OI.JoyList.RIGHT)));
     }
 

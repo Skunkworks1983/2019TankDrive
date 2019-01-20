@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivebase extends Subsystem
 {
-    private static final int LEFT1_PORT = 14;
+    private static final int LEFT1_PORT = 13;
     private static final boolean LEFT1_REVERSED = false;
     private static final int LEFT2_PORT = 15;
     private static final boolean LEFT2_REVERSED = false;
-    private static final int LEFT3_PORT = 13;
+    private static final int LEFT3_PORT = 14;
     private static final boolean LEFT3_REVERSED = false;
     private static final int RIGHT1_PORT = 0;
     private static final boolean RIGHT1_REVERSED = false;
@@ -30,13 +30,13 @@ public class Drivebase extends Subsystem
 //        left2 = new TalonSRX(LEFT2_PORT);
 //        left3 = new TalonSRX(LEFT3_PORT);
 
-        left1 = new CANSparkMax(LEFT1_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
-        left2 = new CANSparkMax(LEFT2_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
-        left3 = new CANSparkMax(LEFT3_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
+//        left1 = new CANSparkMax(LEFT1_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
+//        left2 = new CANSparkMax(LEFT2_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
+//        left3 = new CANSparkMax(LEFT3_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
 
-        left1.setInverted(LEFT1_REVERSED);
-        left2.setInverted(LEFT2_REVERSED);
-        left3.setInverted(LEFT3_REVERSED);
+//        left1.setInverted(LEFT1_REVERSED);
+//        left2.setInverted(LEFT2_REVERSED);
+//        left3.setInverted(LEFT3_REVERSED);
 
         //left2.follow(left1);
         //left3.follow(left1);
@@ -46,21 +46,23 @@ public class Drivebase extends Subsystem
 //        right3 = new TalonSRX(RIGHT3_PORT);
 
         right1 = new CANSparkMax(RIGHT1_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
-        right2 = new CANSparkMax(RIGHT2_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
-        right3 = new CANSparkMax(RIGHT3_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
+//        right2 = new CANSparkMax(RIGHT2_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
+//        right3 = new CANSparkMax(RIGHT3_PORT, CANSparkMaxLowLevel.MotorType.kBrushless);
 
         right1.setInverted(RIGHT1_REVERSED);
-        right2.setInverted(RIGHT2_REVERSED);
-        right3.setInverted(RIGHT3_REVERSED);
+//        right2.setInverted(RIGHT2_REVERSED);
+//        right3.setInverted(RIGHT3_REVERSED);
 
-        right2.follow(right1);
-        right3.follow(right1);
+        //right2.follow(right1);
+        //right3.follow(right1);
     }
 
     public void setLeft(double percentOutput)
     {
 //        left1.set(ControlMode.PercentOutput, percentOutput);
         left1.set(percentOutput);
+        left2.set(percentOutput);
+        left3.set(percentOutput);
         System.out.println("Left set to: " + percentOutput);
     }
 
@@ -68,6 +70,8 @@ public class Drivebase extends Subsystem
     {
 //        right1.set(ControlMode.PercentOutput, percentOutput);
         right1.set(percentOutput);
+        //right2.set(percentOutput);
+        //right3.set(percentOutput);
         System.out.println("Right set to: " + percentOutput);
     }
 

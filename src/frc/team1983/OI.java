@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.Joystick;
 
 import java.util.HashMap;
 
+import static java.lang.Math.abs;
+
 public class OI {
     private HashMap<JoyList, Joystick> joyMap;
 
@@ -21,12 +23,12 @@ public class OI {
 
     public double getX(JoyList joystick)
     {
-        return joyMap.get(joystick).getX();
+        return abs(joyMap.get(joystick).getX()) > .1 ? joyMap.get(joystick).getX() : 0;
     }
 
     public double getY(JoyList joystick)
     {
-        return joyMap.get(joystick).getY();
+        return abs(joyMap.get(joystick).getY()) > .1? joyMap.get(joystick).getY() : 0;
     }
 
     public enum JoyList
